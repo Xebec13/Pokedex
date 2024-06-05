@@ -1,0 +1,9 @@
+# Ignorowanie pliku README.md
+README.md
+
+# Ignorowanie folderu static
+/static/
+
+# Ignorowanie plików wygenerowanych przez kompilator SCSS lub inne narzędzia (jeśli używasz)
+style.scss
+style.css.map
