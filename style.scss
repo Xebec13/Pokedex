@@ -1,0 +1,97 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic);
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+/* GLOBAL STYLES */
+/* COLORS */
+$test: hsla(0, 34%, 51%, 0.5);
+$dark-blue: hsl(220, 34%, 51%);
+
+/* SIZE */
+/* BREAKPOINTS */
+$breakpoint-mobile: 767px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1025px;
+$breakpoint-desktop: 1440px;
+
+.container {
+  scroll-behavior: smooth;
+  width: 100%;
+}
+
+header {
+  background-color: $dark-blue;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px;
+
+  .logo {
+    transform: rotate(345deg);
+    min-width: 65px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .head-title {
+    border: 1px solid lime;
+    justify-self: center;
+    font-size: 2rem;
+    text-align: center;
+    background-color: hsla(hue($test), saturation($test), lightness($test), 0.5);
+
+    @media (max-width: $breakpoint-laptop) {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 747px) {
+      font-size: 0.5rem;
+    }
+  }
+
+  .nav-bar {
+    ul {
+      list-style: none;
+      border: 1px solid pink;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 1.2rem;
+
+      li {
+        a {
+          position: relative;
+          color: crimson;
+          text-decoration: none;
+
+          &:hover {
+            &::before {
+              content: "";
+              position: absolute;
+              left: -15px;
+              top: 50%;
+              transform: translateY(-50%);
+              width: 15px; // Zmniejsz szerokość obrazka
+              height: 15px; // Zmniejsz wysokość obrazka
+              background-image: url(static/PokeBall.png);
+              background-size: cover;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+main {
+  // Your main styles here
+}
